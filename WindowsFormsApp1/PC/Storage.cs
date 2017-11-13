@@ -10,6 +10,8 @@ namespace WindowsFormsApp1
     {
         public class Storage
         {
+            public static Storage[] StorageAvailable = new Storage[10];
+
             public int productID;
             public string productName;
 
@@ -18,12 +20,18 @@ namespace WindowsFormsApp1
                 productID = 0;
                 productName = "Undefined";
 
+                //initializing Storage HDD
+                for (int i = 0; i < StorageAvailable.Length; i++)
+                {
+                    StorageAvailable[i] = new Storage(i, "Western Digital " + i);
+                }
             }
 
             public Storage(int productID, string productName)
             {
                 this.productID = productID;
                 this.productName = productName;
+
             }
         }
     }

@@ -10,6 +10,7 @@ namespace WindowsFormsApp1
     {
         public class Graphics
         {
+            public static Graphics[] GPUAvailable = new Graphics[10];
             public int productID;
             public string productName;
 
@@ -18,12 +19,18 @@ namespace WindowsFormsApp1
                 productID = 0;
                 productName = "Undefined";
 
+                //initializing Graphics GPU
+                for (int i = 0; i < GPUAvailable.Length; i++)
+                {
+                    GPUAvailable[i] = new Graphics(i, "NVidia " + i);
+                }
             }
 
             public Graphics(int productID, string productName)
             {
                 this.productID = productID;
                 this.productName = productName;
+
             }
         }
     }

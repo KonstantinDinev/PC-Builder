@@ -10,6 +10,8 @@ namespace WindowsFormsApp1
     {
         public class Cooling
         {
+            public static Cooling[] CoolingAvailable = new Cooling[10];
+
             public int productID;
             public string productName;
 
@@ -18,12 +20,18 @@ namespace WindowsFormsApp1
                 productID = 0;
                 productName = "Undefined";
 
+                //initializing Coolings
+                for (int i = 0; i < CoolingAvailable.Length; i++)
+                {
+                    CoolingAvailable[i] = new Cooling(i, "WaterCooling " + i);
+                }
             }
 
             public Cooling(int productID, string productName)
             {
                 this.productID = productID;
                 this.productName = productName;
+
             }
         }
     }
